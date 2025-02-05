@@ -17,3 +17,7 @@ Practice Questions:
 8. Create a program that prints all Armstrong numbers between 1 to 500.
 9. Implement a program to find the GCD and LCM of two numbers.
 10. Write a nested loop program to print a pattern like:
+   1
+   1 2
+   1 2 3
+   1 2 3 4
