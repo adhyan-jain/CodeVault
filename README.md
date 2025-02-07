@@ -7,7 +7,7 @@ Welcome to **CodeVault**, the repository where I document my coding journey. Thi
 - **C Folder**: Contains day-wise work, exercises, and challenges related to the C programming language. Each day folder documents my progress, key concepts learned, and any code snippets or solutions to problems.
 - **C++ Folder**: Similarly, this folder stores my day-wise work and progress as I continue learning C++. Each folder contains code snippets, solutions to challenges, and documentation of new concepts I've explored.
 
-For larger **projects**, I maintain a separate repository dedicated to those, which you can explore [here](link_to_projects_repo).
+For larger **projects**, I maintain a separate repository dedicated to those, which you can explore by going to my list of Projects in my profile.
 
 ## Technologies Covered
 
@@ -19,7 +19,7 @@ For larger **projects**, I maintain a separate repository dedicated to those, wh
 - **C Folder**: Start here to follow my learning journey in C, from basic concepts to more advanced topics.
 - **C++ Folder**: Dive into my ongoing C++ learning journey, where I document daily exercises and projects as I progress.
   
-You can also explore my [projects repo](link_to_projects_repo) for coding projects that showcase my growing understanding of the languages.
+You can also explore my coding projects that showcase my growing understanding of the languages.
 
 ## Contributing
 
