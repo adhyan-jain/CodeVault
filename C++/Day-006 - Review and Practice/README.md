@@ -3,7 +3,9 @@ Topics:
 - Review of all topics from Days 1-5
 - Problem-solving techniques
 - Code optimization strategies
-- 
+- Time Complexity
+- Some more basic topics
+
 Practice Questions:
 
 1. Hollow Rectangle Pattern
