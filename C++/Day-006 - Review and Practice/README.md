@@ -5,3 +5,10 @@ Topics:
 - Code optimization strategies
 - 
 Practice Questions:
+
+1. Hollow Rectangle Pattern
+2. Inverted Half Pyramid
+3. Half Pyramid after 180-degree Rotation
+4. Half Pyramid using Numbers
+5. Floyd's Triangle
+6. Butterfly Pattern
