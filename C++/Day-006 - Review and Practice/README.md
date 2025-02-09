@@ -14,3 +14,7 @@ Practice Questions:
 4. Half Pyramid using Numbers
 5. Floyd's Triangle
 6. Butterfly Pattern
+7. Inverted Pattern
+8. 0-1 Pattern
+9. Rhombus Pattern
+10. Number Pattern
