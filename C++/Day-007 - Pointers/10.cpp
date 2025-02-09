@@ -1,38 +1,31 @@
 // 10. Write a program to implement function pointers for basic arithmetic operations.
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-int add(int a, int b) {
-    return a + b;
-}
-
-int subtract(int a, int b) {
-    return a - b;
-}
-
-int multiply(int a, int b) {
-    return a * b;
-}
-
-int divide(int a, int b) {
-    return a / b;
-}
+int add(int a, int b) { return a + b; }
+int subtract(int a, int b) { return a - b; }
+int multiply(int a, int b) { return a * b; }
+int divide(int a, int b) { return a / b; }
 
 int main() {
-    int num1, num2, result;
-    char operator;
-    printf("Enter first number, operator, second number: ");
-    scanf("%d %c %d", &num1, &operator, &num2);
-    int (*op_func)(int, int);
-    if (operator == '+') {
-        op_func = add;
-    } else if (operator == '-') {
-        op_func = subtract;
-    } else if (operator == '*') {
-        op_func = multiply;
-    } else if (operator == '/') {
-        op_func = divide;
+    int a, b;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    int (*operation)(int, int);
+
+    cout << "Choose operation (1 - Add, 2 - Subtract, 3 - Multiply, 4 - Divide): ";
+    int choice;
+    cin >> choice;
+
+    switch (choice) {
+        case 1: operation = add; break;
+        case 2: operation = subtract; break;
+        case 3: operation = multiply; break;
+        case 4: operation = divide; break;
+        default: cout << "Invalid choice!" << endl; return 0;
     }
-    result = op_func(num1, num2);
-    printf("Result: %d", result);
+
+    cout << "Result: " << operation(a, b) << endl;
     return 0;
 }

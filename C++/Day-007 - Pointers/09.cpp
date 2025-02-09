@@ -1,30 +1,41 @@
 // 9. Implement a program to remove duplicates from an array using pointers.
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-int main() {
-    int num;
-    printf("Enter number of elements: ");
-    scanf("%d", &num);
-    int arr[num];
-    printf("Enter elements: ");
-    for (int i = 0; i < num; i++) {
-        scanf("%d", &arr[i]);
-    }
-    int *ptr1, *ptr2, temp, i, j;
-    for (ptr1 = arr; ptr1 < arr + num - 1; ptr1++) {
-        for (ptr2 = ptr1 + 1; ptr2 < arr + num; ptr2++) {
-            if (*ptr1 == *ptr2) {
-                for (i = (ptr2 - arr); i < num - 1; i++) {
-                    arr[i] = arr[i + 1];
+void removeDuplicates(int *arr, int &n) {
+    for (int i = 0; i < n; ++i) {
+        for (int j = i + 1; j < n; ++j) {
+            if (*(arr + i) == *(arr + j)) {
+                for (int k = j; k < n - 1; ++k) {
+                    *(arr + k) = *(arr + k + 1);
                 }
-                num--;
-                ptr2--;
+                --n;
+                --j;
             }
         }
     }
-    printf("Array after removing duplicates: ");
-    for (i = 0; i < num; i++) {
-        printf("%d ", arr[i]);
+}
+
+int main() {
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    int *arr = new int[n];
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; ++i) {
+        cin >> *(arr + i);
     }
+
+    removeDuplicates(arr, n);
+
+    cout << "Array after removing duplicates: ";
+    for (int i = 0; i < n; ++i) {
+        cout << *(arr + i) << " ";
+    }
+    cout << endl;
+
+    delete[] arr;
+
     return 0;
 }

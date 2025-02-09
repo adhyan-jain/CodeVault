@@ -1,39 +1,29 @@
 // 5. Create a program to implement a simple linked list using pointers.
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+using namespace std;
 
-struct Node {
-    int data;
-    struct Node* next;
-};
+void printList(int *arr, int size) {
+    for (int i = 0; i < size; ++i) {
+        cout << *(arr + i) << " ";
+    }
+    cout << endl;
+}
 
 int main() {
-    struct Node* head = NULL;
-    struct Node* temp = NULL;
-    struct Node* new_node;
-    int num;
-    printf("Enter number of nodes: ");
-    scanf("%d", &num);
-    for (int i = 0; i < num; i++) {
-        new_node = (struct Node*)malloc(sizeof(struct Node));
-        printf("Enter data for node %d: ", i + 1);
-        scanf("%d", &new_node->data);
-        new_node->next = NULL;
-        if (head == NULL) {
-            head = new_node;
-        } else {
-            temp = head;
-            while (temp->next != NULL) {
-                temp = temp->next;
-            }
-            temp->next = new_node;
-        }
+    int n;
+    cout << "Enter the number of nodes: ";
+    cin >> n;
+
+    int *arr = new int[n];
+    
+    for (int i = 0; i < n; ++i) {
+        cout << "Enter value for node " << i + 1 << ": ";
+        cin >> *(arr + i);
     }
-    printf("Linked list: ");
-    temp = head;
-    while (temp != NULL) {
-        printf("%d ", temp->data);
-        temp = temp->next;
-    }
+
+    printList(arr, n);
+
+    delete[] arr;
+
     return 0;
 }

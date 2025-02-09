@@ -1,28 +1,37 @@
 // 7. Write a program to sort an array using pointers.
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-int main() {
-    int num;
-    printf("Enter number of elements: ");
-    scanf("%d", &num);
-    int arr[num];
-    printf("Enter elements: ");
-    for (int i = 0; i < num; i++) {
-        scanf("%d", &arr[i]);
-    }
-    int *ptr1, *ptr2, temp;
-    for (ptr1 = arr; ptr1 < arr + num - 1; ptr1++) {
-        for (ptr2 = ptr1 + 1; ptr2 < arr + num; ptr2++) {
-            if (*ptr1 > *ptr2) {
-                temp = *ptr1;
-                *ptr1 = *ptr2;
-                *ptr2 = temp;
+void sortArray(int *arr, int n) {
+    for (int i = 0; i < n - 1; ++i) {
+        for (int j = i + 1; j < n; ++j) {
+            if (*(arr + i) > *(arr + j)) {
+                swap(*(arr + i), *(arr + j));
             }
         }
     }
-    printf("Sorted array: ");
-    for (int i = 0; i < num; i++) {
-        printf("%d ", arr[i]);
+}
+
+int main() {
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    int *arr = new int[n];
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; ++i) {
+        cin >> *(arr + i);
     }
+
+    sortArray(arr, n);
+
+    cout << "Sorted array: ";
+    for (int i = 0; i < n; ++i) {
+        cout << *(arr + i) << " ";
+    }
+    cout << endl;
+
+    delete[] arr;
+
     return 0;
 }

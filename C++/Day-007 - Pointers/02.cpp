@@ -1,19 +1,25 @@
 // 2. Create a program to find the sum of elements in an array using pointers.
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main() {
-    int num, sum = 0;
-    printf("Enter number of elements: ");
-    scanf("%d", &num);
-    int arr[num];
-    printf("Enter the elements: ");
-    for (int i = 0; i < num; i++) {
-        scanf("%d", &arr[i]);
+    int size;
+    cout << "Enter the size of the array: ";
+    cin >> size;
+
+    int* arr = new int[size];
+    cout << "Enter " << size << " elements: ";
+    for (int i = 0; i < size; ++i) {
+        cin >> *(arr + i);
     }
-    int *ptr = arr;
-    for (int i = 0; i < num; i++) {
-        sum += *(ptr + i);
+
+    int sum = 0;
+    for (int i = 0; i < size; ++i) {
+        sum += *(arr + i);
     }
-    printf("Sum of elements: %d", sum);
+
+    cout << "Sum of array elements: " << sum << endl;
+    delete[] arr;
+
     return 0;
 }
