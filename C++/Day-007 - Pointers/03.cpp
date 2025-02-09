@@ -1,20 +1,24 @@
 // 3. Implement a program to reverse a string using pointers.
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <cstring>
+using namespace std;
 
-int main() {
-    char str[100];
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-    int len = strlen(str);
-    char *start = str, *end = str + len - 2;
+void reverseString(char *str) {
+    char *start = str;
+    char *end = str + strlen(str) - 1;
+
     while (start < end) {
-        char temp = *start;
-        *start = *end;
-        *end = temp;
+        swap(*start, *end);
         start++;
         end--;
     }
-    printf("Reversed string: %s", str);
+}
+
+int main() {
+    char str[100];
+    cout << "Enter a string: ";
+    cin >> str;
+    reverseString(str);
+    cout << "Reversed string: " << str << endl;
     return 0;
 }

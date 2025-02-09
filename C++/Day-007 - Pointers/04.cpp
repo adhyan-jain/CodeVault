@@ -1,21 +1,25 @@
 // 4. Write a program to dynamically allocate an array and perform basic operations.
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+using namespace std;
 
 int main() {
-    int num;
-    printf("Enter number of elements: ");
-    scanf("%d", &num);
-    int *arr = (int*)malloc(num * sizeof(int));
-    printf("Enter elements: ");
-    for (int i = 0; i < num; i++) {
-        scanf("%d", &arr[i]);
+    int size;
+    cout << "Enter the size of the array: ";
+    cin >> size;
+
+    int* arr = new int[size];
+    cout << "Enter " << size << " elements: ";
+    for (int i = 0; i < size; ++i) {
+        cin >> *(arr + i);
     }
-    int sum = 0;
-    for (int i = 0; i < num; i++) {
-        sum += arr[i];
+
+    cout << "Array elements are: ";
+    for (int i = 0; i < size; ++i) {
+        cout << *(arr + i) << " ";
     }
-    printf("Sum of elements: %d", sum);
-    free(arr);
+    cout << endl;
+
+    delete[] arr;
+
     return 0;
 }
