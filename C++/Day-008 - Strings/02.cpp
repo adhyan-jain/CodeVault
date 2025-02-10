@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-void func2(string str) {
+void func(string str) {
     string rev1 = str;
     reverse(rev1.begin(), rev1.end());
     cout << "By function: " << (str == rev1 ? "Yes" : "No") << endl;
@@ -23,6 +23,6 @@ int main() {
     string str;
     cout << "Enter a string: ";
     getline(cin, str);
-    func2(str);
+    func(str);
     return 0;
 }

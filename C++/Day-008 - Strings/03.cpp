@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-void func3(string str) {
+void func(string str) {
     int v1 = 0, c1 = 0;
     string vowels = "aeiouAEIOU";
 
@@ -30,6 +30,6 @@ int main() {
     string str;
     cout << "Enter a string: ";
     getline(cin, str);
-    func3(str);
+    func(str);
     return 0;
 }
