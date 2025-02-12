@@ -3,8 +3,14 @@
 #include <iostream>
 using namespace std;
 
+// n & n-1 has same bits as n except the rightmost set bit
+// To solve this question we can see that in any power of 2, there is only one set bit
+// Following this if number is power of 2 then num-1 will have all bits set except the rightmost set bit
+// on using bitwise AND operator on num and num-1 we will get 0 as result
+
+
 bool func(int n){
-    return (n && !(n& n-1)); // The n && part is for the case where number is 0
+    return (n && !(n & n-1)); // The n && part is for the case where number is 0, becuse in that n-1 isn't possible
 }
 
 int main(){
