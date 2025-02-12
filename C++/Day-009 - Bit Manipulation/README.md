@@ -1,4 +1,4 @@
-# Bitwise Operations in C++
+# Day - 9 : Bitwise Operations
 
 This project implements various bitwise operations on integers using C++. The following functions are included:
 
