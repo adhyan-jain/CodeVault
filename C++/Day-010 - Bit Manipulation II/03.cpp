@@ -1,11 +1,11 @@
-// Write a program to generate all possible subsets of a set
+// Write a program to generate all possible subsets of a integer set
 
 #include <iostream>
 using namespace std;
 
 void subset(int arr[], int n){
     // from 0 to 2^n - 1
-    for(int i=1; i<(1<<n); i++){
+    for(int i=0; i<(1<<n); i++){
         // print subset for the ith number
         for(int j=0; j<n; j++){
             // getting bit
