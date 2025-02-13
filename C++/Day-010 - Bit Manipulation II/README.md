@@ -6,4 +6,5 @@ Topics Learned
 Practice Questions
 - Check if a given number is a power of 2
 - Count the number of ones in the binary representation of a number
-- Generate all possible subsets of a set
+- Generate all possible subsets of a integer set
+- Generate all possible subsets of a character set
