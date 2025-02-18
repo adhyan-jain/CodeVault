@@ -65,7 +65,6 @@ int main()
 {
     binary b;
     b.read();
-    // b.chk_bin();
     b.display();
     b.ones_compliment();
     b.display();
