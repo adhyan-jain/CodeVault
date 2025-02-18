@@ -1,4 +1,4 @@
-# Day 016: Array of Objects & Passing Objects as Function Arguments  
+# Day 16: Array of Objects & Passing Objects as Function Arguments  
 
 ## Topics Covered  
 - **Array of Objects**: Storing multiple instances of a class in an array.  
