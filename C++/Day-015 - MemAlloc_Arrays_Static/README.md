@@ -1,4 +1,4 @@
-# **Day 015: Memory Allocation, Using Arrays, and Static Data Members & Methods**  
+# **Day 15: Memory Allocation, Using Arrays, and Static Data Members & Methods**  
 
 ## **Topics:**  
 - **Memory allocation** in normal functions vs. class methods.  
