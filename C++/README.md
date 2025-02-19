@@ -1,3 +1,3 @@
 My C++ codes
 
-These folders contain my dailt progress and work in c++ language.
+These folders contain my daily progress and work in c++ language.
