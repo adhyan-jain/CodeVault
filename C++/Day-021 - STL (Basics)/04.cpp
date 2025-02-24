@@ -1,3 +1,5 @@
+// Vectors
+
 #include <bits/stdc++.h>
 using namespace std;
 int main()
@@ -12,13 +14,14 @@ int main()
     }
     cout << endl;
     
-    random_shuffle(v.rbegin(), v.rend()); // Shuffles the array randommly
-    auto r = *(max_element(v.begin(), v.end()));
+    random_shuffle(v.rbegin(), v.rend()); // Shuffles the array randomlly
+
+    auto r = *(max_element(v.begin(), v.end())); // max value
     cout << r << endl;
     
     int limit = 1;
-    v.erase(v.begin() + 1);
-    v.insert(v.begin(), 4, 3);
+    v.erase(v.begin() + 1); // erase one element
+    v.insert(v.begin(), 4, 3);  // erase a range of elements
     
     // Shorter Way
     for (auto x : v)
