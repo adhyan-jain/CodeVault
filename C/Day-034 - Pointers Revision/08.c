@@ -35,17 +35,16 @@ Output 2 :
 Invalid input
 */
 
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
     int n;
-    cin >> n;
+    scanf("%d", &n);
     int max = n % 10, min = n % 10;
     if (n <= 1000)
     {
-        cout << "Invalid input";
+        printf("Invalid input");
         return 0;
     }
     while (n)
@@ -61,6 +60,6 @@ int main()
         }
         n /= 10;
     }
-    cout << min + max;
+    printf("%d", min + max);
     return 0;
 }

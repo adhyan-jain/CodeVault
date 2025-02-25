@@ -59,16 +59,17 @@ Output 3 :
 
 */
 
-
 #include <stdio.h>
-#include<math.h>
+#include <math.h>
 
-void Growth(double* ptr1, double* ptr2, double* ptr3){
-    double ans=(double)(*ptr1)*exp((*ptr2)*(*ptr3));
+void Growth(double *ptr1, double *ptr2, double *ptr3)
+{
+    double ans = (double)(*ptr1) * exp((*ptr2) * (*ptr3));
     printf("%.2lf", ans);
 }
 
-int main(){
+int main()
+{
     double pop, rate, times;
     scanf("%lf %lf %lf", &pop, &rate, &times);
     Growth(&pop, &rate, &times);

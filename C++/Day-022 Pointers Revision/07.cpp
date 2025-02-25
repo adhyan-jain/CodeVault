@@ -45,11 +45,14 @@ Output 2 :
 #include <iostream>
 using namespace std;
 
-int main(){
-    int a1,d,n;
-    cin>>a1>>d>>n;
-    int* pa1 = &a1; int* pd = &d; int* pn = &n;
-    int sum=((*pn)*(2*(*pa1)+((*pn)-1)*(*pd)))/2;
-    cout<<sum;
+int main()
+{
+    int a1, d, n;
+    cin >> a1 >> d >> n;
+    int *pa1 = &a1;
+    int *pd = &d;
+    int *pn = &n;
+    int sum = ((*pn) * (2 * (*pa1) + ((*pn) - 1) * (*pd))) / 2;
+    cout << sum;
     return 0;
 }

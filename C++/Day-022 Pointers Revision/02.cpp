@@ -4,7 +4,7 @@ Problem Statement
 
 
 
-Ram is given two arrays: arr1 and arr2, each containing integer values. His task is to merge these two arrays into a single array and print the merged result. 
+Ram is given two arrays: arr1 and arr2, each containing integer values. His task is to merge these two arrays into a single array and print the merged result.
 
 
 
@@ -40,52 +40,57 @@ Input 1 :
 3
 10 20 30
 Output 1 :
--74 14 47 82 87 21 -66 10 20 30 
+-74 14 47 82 87 21 -66 10 20 30
 Input 2 :
 5
 -100 20 30 40 50
 1
 100
 Output 2 :
--100 20 30 40 50 100 
+-100 20 30 40 50 100
 
 */
-
 
 #include <iostream>
 using namespace std;
 
-int main(){
+int main()
+{
     int size1, size2;
-    cin>>size1;
+    cin >> size1;
     int arr1[size1];
-    for(int i=0; i<size1; i++){
-        cin>>arr1[i];
+    for (int i = 0; i < size1; i++)
+    {
+        cin >> arr1[i];
     }
-    cin>>size2;
+    cin >> size2;
     int arr2[size2];
-    for(int i=0; i<size2; i++){
-        cin>>arr2[i];
+    for (int i = 0; i < size2; i++)
+    {
+        cin >> arr2[i];
     }
-    
-    int *ptr1=arr1;
-    int *ptr2=arr2;
-    
-    int arr3[size1+size2];
-    int k=0;
-    
-    for(int i=0; i<size1; i++){
-        arr3[k++]=*(ptr1 + i);
+
+    int *ptr1 = arr1;
+    int *ptr2 = arr2;
+
+    int arr3[size1 + size2];
+    int k = 0;
+
+    for (int i = 0; i < size1; i++)
+    {
+        arr3[k++] = *(ptr1 + i);
     }
-    for(int i=0; i<size2; i++){
-        arr3[k++]=*(ptr2 + i);
+    for (int i = 0; i < size2; i++)
+    {
+        arr3[k++] = *(ptr2 + i);
     }
-    
-    int *ptr3=arr3;
-    
+
+    int *ptr3 = arr3;
+
     // Printing array
-    for(int i=0; i<size1+size2; i++){
-        cout << *(ptr3+i)<<" ";
+    for (int i = 0; i < size1 + size2; i++)
+    {
+        cout << *(ptr3 + i) << " ";
     }
     return 0;
 }

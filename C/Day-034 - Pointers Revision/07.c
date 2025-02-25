@@ -44,11 +44,14 @@ Output 2 :
 
 #include <stdio.h>
 
-int main(){
-    int a1,d,n;
+int main()
+{
+    int a1, d, n;
     scanf("%d %d %d", &a1, &d, &n);
-    int* pa1 = &a1; int* pd = &d; int* pn = &n;
-    int sum=((*pn)*(2*(*pa1)+((*pn)-1)*(*pd)))/2;
+    int *pa1 = &a1;
+    int *pd = &d;
+    int *pn = &n;
+    int sum = ((*pn) * (2 * (*pa1) + ((*pn) - 1) * (*pd))) / 2;
     printf("%d", sum);
     return 0;
 }

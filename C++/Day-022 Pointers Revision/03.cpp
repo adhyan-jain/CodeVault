@@ -59,19 +59,20 @@ Output 3 :
 
 */
 
-
 #include <iostream>
-#include<cmath>
+#include <cmath>
 using namespace std;
 
-void Growth(double* ptr1, double* ptr2, double* ptr3){
-    double ans=(double)(*ptr1)*exp((*ptr2)*(*ptr3));
-    cout<< ans;
+void Growth(double *ptr1, double *ptr2, double *ptr3)
+{
+    double ans = (double)(*ptr1) * exp((*ptr2) * (*ptr3));
+    cout << ans;
 }
 
-int main(){
+int main()
+{
     double pop, rate, times;
-    cin>>pop>>rate>>times;
+    cin >> pop >> rate >> times;
     Growth(&pop, &rate, &times);
     return 0;
 }

@@ -4,7 +4,7 @@ Problem Statement
 
 
 
-You are tasked with creating a program to calculate the area of a rectangle. You need to implement this using pointer arithmetic. 
+You are tasked with creating a program to calculate the area of a rectangle. You need to implement this using pointer arithmetic.
 
 
 
@@ -38,11 +38,12 @@ Output 2 :
 #include <iostream>
 using namespace std;
 
-int main(){
+int main()
+{
     int length, breadth;
-    int* ptr1 = &length;
-    int* ptr2 = &breadth;
-    cin>>*ptr1>>*ptr2;
-    cout<<(*ptr1)*(*ptr2);
+    int *ptr1 = &length;
+    int *ptr2 = &breadth;
+    cin >> *ptr1 >> *ptr2;
+    cout << (*ptr1) * (*ptr2);
     return 0;
 }
