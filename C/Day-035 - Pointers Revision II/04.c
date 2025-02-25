@@ -52,21 +52,24 @@ Rs.855.00
 
 #include <stdio.h>
 
-int main(){
+int main()
+{
     int age, num;
     scanf("%d", &age);
     scanf("%d", &num);
-    int* p_age=&age;
-    int* p_num=&num;
+    int *p_age = &age;
+    int *p_num = &num;
     float discount_price;
-    if(*p_age>=18){
-        discount_price=300-300*0.05;
+    if (*p_age >= 18)
+    {
+        discount_price = 300 - 300 * 0.05;
     }
-    else{
-        discount_price=150-150*0.10;
+    else
+    {
+        discount_price = 150 - 150 * 0.10;
     }
-    float total=*p_num*discount_price;
+    float total = *p_num * discount_price;
     printf("Rs.%.2f", total);
-    
+
     return 0;
 }
