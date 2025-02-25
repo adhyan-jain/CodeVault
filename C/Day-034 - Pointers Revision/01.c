@@ -1,9 +1,9 @@
 /*
 Problem Statement
 
-Jenifer is developing a program for a warehouse management system that needs to analyze inventory data. 
+Jenifer is developing a program for a warehouse management system that needs to analyze inventory data.
 
-The program receives an array representing the quantities of different products in the warehouse. The task is to count the number of items falling within a specified range of quantities. 
+The program receives an array representing the quantities of different products in the warehouse. The task is to count the number of items falling within a specified range of quantities.
 Help Jenifer to accomplish her task using pointers.
 
 Input format :
@@ -44,18 +44,22 @@ Output 2 :
 
 #include <stdio.h>
 
-int main(){
+int main()
+{
     int size, low, upp;
     scanf("%d", &size);
     int arr[size];
-    int *ptr=arr;
-    int count=0;
-    for(int i=0; i<size; i++){
-        scanf("%d", ptr+i);
+    int *ptr = arr;
+    int count = 0;
+    for (int i = 0; i < size; i++)
+    {
+        scanf("%d", ptr + i);
     }
     scanf("%d%d", &low, &upp);
-    for(int i=0; i<size; i++){
-        if(*(ptr+i)>=low && *(ptr+i)<=upp){
+    for (int i = 0; i < size; i++)
+    {
+        if (*(ptr + i) >= low && *(ptr + i) <= upp)
+        {
             count++;
         }
     }

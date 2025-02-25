@@ -41,22 +41,26 @@ Output 2 :
 #include <iostream>
 using namespace std;
 
-int* findLarger(int* ptr1, int* ptr2){
-    if(*ptr1>*ptr2){
+int *findLarger(int *ptr1, int *ptr2)
+{
+    if (*ptr1 > *ptr2)
+    {
         return ptr1;
     }
-    else{
+    else
+    {
         return ptr2;
     }
 }
 
-int main(){
+int main()
+{
     int num1, num2;
-    cin>>num1;
-    cin>>num2;
-    int* ptr1=&num1;
-    int* ptr2=&num2;
-    int* ans= findLarger(ptr1, ptr2);
-    cout<<*ans;
+    cin >> num1;
+    cin >> num2;
+    int *ptr1 = &num1;
+    int *ptr2 = &num2;
+    int *ans = findLarger(ptr1, ptr2);
+    cout << *ans;
     return 0;
 }

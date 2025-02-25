@@ -40,22 +40,26 @@ Output 2 :
 
 #include <stdio.h>
 
-int* findLarger(int* ptr1, int* ptr2){
-    if(*ptr1>*ptr2){
+int *findLarger(int *ptr1, int *ptr2)
+{
+    if (*ptr1 > *ptr2)
+    {
         return ptr1;
     }
-    else{
+    else
+    {
         return ptr2;
     }
 }
 
-int main(){
+int main()
+{
     int num1, num2;
     scanf("%d", &num1);
     scanf("%d", &num2);
-    int* ptr1=&num1;
-    int* ptr2=&num2;
-    int* ans= findLarger(ptr1, ptr2);
+    int *ptr1 = &num1;
+    int *ptr2 = &num2;
+    int *ans = findLarger(ptr1, ptr2);
     printf("%d", *ans);
     return 0;
 }

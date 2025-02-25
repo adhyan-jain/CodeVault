@@ -4,7 +4,7 @@ Problem Statement
 
 
 
-You are tasked with creating a program to calculate the area of a rectangle. You need to implement this using pointer arithmetic. 
+You are tasked with creating a program to calculate the area of a rectangle. You need to implement this using pointer arithmetic.
 
 
 
@@ -35,16 +35,14 @@ Output 2 :
 
 */
 
-
-
-
 #include <stdio.h>
 
-int main(){
+int main()
+{
     int length, breadth;
-    int* ptr1 = &length;
-    int* ptr2 = &breadth;
+    int *ptr1 = &length;
+    int *ptr2 = &breadth;
     scanf("%d %d", ptr1, ptr2);
-    printf("%d", (*ptr1)*(*ptr2));
+    printf("%d", (*ptr1) * (*ptr2));
     return 0;
 }

@@ -3,7 +3,7 @@ Problem Statement
 
 
 
-Karthik wants a program to find the quotient and remainder of two variables using pointers. Since he is not familiar with the pointers, he asks for your help. 
+Karthik wants a program to find the quotient and remainder of two variables using pointers. Since he is not familiar with the pointers, he asks for your help.
 
 
 
@@ -43,12 +43,13 @@ Output 3 :
 
 #include <stdio.h>
 
-int main(){
+int main()
+{
     int num1, num2;
-    int* ptr1 = &num1;
-    int* ptr2 = &num2;
-    
+    int *ptr1 = &num1;
+    int *ptr2 = &num2;
+
     scanf("%d %d", ptr1, ptr2);
-    printf("%d %d", *ptr1/(*ptr2), *ptr1%(*ptr2));
+    printf("%d %d", *ptr1 / (*ptr2), *ptr1 % (*ptr2));
     return 0;
 }
