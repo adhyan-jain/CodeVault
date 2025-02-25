@@ -1,12 +1,11 @@
 
 
-
 /*
 Problem Statement
 
 
 
-Becky is analyzing a list of integers. She needs to find the maximum absolute difference between the two elements in the list. 
+Becky is analyzing a list of integers. She needs to find the maximum absolute difference between the two elements in the list.
 
 
 
@@ -40,24 +39,29 @@ Output 2 :
 #include <iostream>
 using namespace std;
 
-int main(){
+int main()
+{
     int num;
-    cin>>num;
+    cin >> num;
     int arr[num];
-    int* ptr=arr;
-    for(int i=0; i<num; i++){
-        cin>>*(ptr+i);
+    int *ptr = arr;
+    for (int i = 0; i < num; i++)
+    {
+        cin >> *(ptr + i);
     }
     int max = *ptr;
-    int min = *ptr; 
-    for(int i=0; i<num; i++){
-        if(max<*(ptr+i)){
-            max=*(ptr+i);
+    int min = *ptr;
+    for (int i = 0; i < num; i++)
+    {
+        if (max < *(ptr + i))
+        {
+            max = *(ptr + i);
         }
-        if(min>*(ptr+i)){
-            min=*(ptr+i);
+        if (min > *(ptr + i))
+        {
+            min = *(ptr + i);
         }
     }
-    cout<<max-min;
+    cout << max - min;
     return 0;
 }

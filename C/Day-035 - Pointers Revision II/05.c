@@ -3,7 +3,7 @@ Problem Statement
 
 
 
-Dev wants to write a program for a school project that takes an integer input and calculates the sum of its odd digits using pointer arithmetic. 
+Dev wants to write a program for a school project that takes an integer input and calculates the sum of its odd digits using pointer arithmetic.
 
 
 
@@ -40,19 +40,21 @@ Output 3 :
 
 */
 
-
 #include <stdio.h>
 
-int main(){
+int main()
+{
     int num;
     scanf("%d", &num);
-    int sum=0;
-    while(num){
-        int rem=num%10;
-        if(!(rem%2==0)){
-            sum+=rem;
+    int sum = 0;
+    while (num)
+    {
+        int rem = num % 10;
+        if (!(rem % 2 == 0))
+        {
+            sum += rem;
         }
-        num/=10;
+        num /= 10;
     }
     printf("%d", sum);
     return 0;

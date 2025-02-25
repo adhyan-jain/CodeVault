@@ -46,24 +46,29 @@ Output 2 :
 
 #include <stdio.h>
 
-int countEven(int*,int);
+int countEven(int *, int);
 
-int main(){
+int main()
+{
     int num;
     scanf("%d", &num);
     int arr[num];
-    for(int i=0; i<num; i++){
+    for (int i = 0; i < num; i++)
+    {
         scanf("%d", &arr[i]);
     }
-    int ans=countEven(arr, num);
+    int ans = countEven(arr, num);
     printf("%d", ans);
     return 0;
 }
 
-int countEven(int* ptr, int num){
-    int count=0;
-    for(int i=0; i<num; i++){
-        if(*(ptr+i)%2==0){
+int countEven(int *ptr, int num)
+{
+    int count = 0;
+    for (int i = 0; i < num; i++)
+    {
+        if (*(ptr + i) % 2 == 0)
+        {
             count++;
         }
     }

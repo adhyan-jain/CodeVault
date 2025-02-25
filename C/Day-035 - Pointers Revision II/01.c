@@ -1,12 +1,11 @@
 
 
-
 /*
 Problem Statement
 
 
 
-Becky is analyzing a list of integers. She needs to find the maximum absolute difference between the two elements in the list. 
+Becky is analyzing a list of integers. She needs to find the maximum absolute difference between the two elements in the list.
 
 
 
@@ -39,24 +38,29 @@ Output 2 :
 
 #include <stdio.h>
 
-int main(){
+int main()
+{
     int num;
-    scanf("%d",&num);
+    scanf("%d", &num);
     int arr[num];
-    int* ptr=arr;
-    for(int i=0; i<num; i++){
-        scanf("%d", ptr+i);
+    int *ptr = arr;
+    for (int i = 0; i < num; i++)
+    {
+        scanf("%d", ptr + i);
     }
     int max = *ptr;
-    int min = *ptr; 
-    for(int i=0; i<num; i++){
-        if(max<*(ptr+i)){
-            max=*(ptr+i);
+    int min = *ptr;
+    for (int i = 0; i < num; i++)
+    {
+        if (max < *(ptr + i))
+        {
+            max = *(ptr + i);
         }
-        if(min>*(ptr+i)){
-            min=*(ptr+i);
+        if (min > *(ptr + i))
+        {
+            min = *(ptr + i);
         }
     }
-    printf("%d",max-min);
+    printf("%d", max - min);
     return 0;
 }

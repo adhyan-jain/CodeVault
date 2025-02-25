@@ -3,7 +3,7 @@ Problem Statement
 
 
 
-Dev wants to write a program for a school project that takes an integer input and calculates the sum of its odd digits using pointer arithmetic. 
+Dev wants to write a program for a school project that takes an integer input and calculates the sum of its odd digits using pointer arithmetic.
 
 
 
@@ -39,22 +39,23 @@ Output 3 :
 13
 */
 
-
-
 #include <iostream>
 using namespace std;
 
-int main(){
+int main()
+{
     int num;
-    cin>>num;
-    int sum=0;
-    while(num){
-        int rem=num%10;
-        if(!(rem%2==0)){
-            sum+=rem;
+    cin >> num;
+    int sum = 0;
+    while (num)
+    {
+        int rem = num % 10;
+        if (!(rem % 2 == 0))
+        {
+            sum += rem;
         }
-        num/=10;
+        num /= 10;
     }
-    cout<<sum<<endl;
+    cout << sum << endl;
     return 0;
 }

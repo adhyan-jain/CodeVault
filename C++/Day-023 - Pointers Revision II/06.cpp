@@ -4,7 +4,7 @@ Problem Statement
 
 
 
-In a classroom, students provide their test scores one by one. Write a program that takes the number of students and their test scores as input, calculates the total score using a pointer, and prints the overall sum of the test scores. 
+In a classroom, students provide their test scores one by one. Write a program that takes the number of students and their test scores as input, calculates the total score using a pointer, and prints the overall sum of the test scores.
 
 
 
@@ -46,15 +46,17 @@ Output 2 :
 #include <iostream>
 using namespace std;
 
-int main(){
-    int num, sum=0;
-    cin>>num;
+int main()
+{
+    int num, sum = 0;
+    cin >> num;
     int arr[num];
-    int *ptr=arr;
-    for(int i=0; i<num; i++){
-        cin>>*(ptr+i);
-        sum+=(*(ptr+i));
+    int *ptr = arr;
+    for (int i = 0; i < num; i++)
+    {
+        cin >> *(ptr + i);
+        sum += (*(ptr + i));
     }
-    cout<<sum<<endl;
+    cout << sum << endl;
     return 0;
 }

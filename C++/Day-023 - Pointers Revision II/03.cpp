@@ -47,24 +47,29 @@ Output 2 :
 #include <iostream>
 using namespace std;
 
-int countEven(int*,int);
+int countEven(int *, int);
 
-int main(){
+int main()
+{
     int num;
-    cin>>num;
+    cin >> num;
     int arr[num];
-    for(int i=0; i<num; i++){
-        cin>>arr[i];
+    for (int i = 0; i < num; i++)
+    {
+        cin >> arr[i];
     }
-    int ans=countEven(arr, num);
-    cout<<ans<<endl;
+    int ans = countEven(arr, num);
+    cout << ans << endl;
     return 0;
 }
 
-int countEven(int* ptr, int num){
-    int count=0;
-    for(int i=0; i<num; i++){
-        if(*(ptr+i)%2==0){
+int countEven(int *ptr, int num)
+{
+    int count = 0;
+    for (int i = 0; i < num; i++)
+    {
+        if (*(ptr + i) % 2 == 0)
+        {
             count++;
         }
     }
