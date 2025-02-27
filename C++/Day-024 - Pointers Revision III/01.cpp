@@ -43,14 +43,15 @@ Output 3 :
 9.87 liters per minute
 */
 
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main()
 {
     float a, b;
-    scanf("%f %f", &a, &b);
+    cin >> a >> b;
     float *ptr1 = &a;
     float *ptr2 = &b;
-    printf("%.2f liters per minute", *ptr1 * (*ptr2) / 1000);
+    cout << *ptr1 * (*ptr2) / 1000 << " liters per minute";
     return 0;
 }

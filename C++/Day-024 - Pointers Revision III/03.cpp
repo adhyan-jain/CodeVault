@@ -85,7 +85,10 @@ Current Balance: 200
 Exiting program.
 
 */
-#include <stdio.h>
+
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
@@ -95,40 +98,40 @@ int main()
     char ans = 'y';
     while (ans == 'y')
     {
-        scanf("%d", &choice);
+        cin >> choice;
         if (choice == 1)
         {
             int add;
-            scanf("%d", &add);
+            cin >> add;
             *ptr += add;
-            printf("Deposit successful.\n");
+            cout << "Deposit successful." << endl;
         }
         else if (choice == 2)
         {
             int sub;
-            scanf("%d", &sub);
+            cin >> sub;
             if (sub > *ptr)
             {
-                printf("Insufficient balance.\n");
+                cout << "Insufficient balance." << endl;
             }
             else
             {
                 *ptr -= sub;
-                printf("Withdrawal successful.\n");
+                cout << "Withdrawal successful." << endl;
             }
         }
         else if (choice == 3)
         {
-            printf("Current Balance: %d\n", *ptr);
+            cout << "Current Balance: " << *ptr << endl;
         }
         else if (choice == 4)
         {
-            printf("Exiting program.\n");
+            cout << "Exiting program." << endl;
             break;
         }
         else
         {
-            printf("Invalid choice.\n");
+            cout << "Invalid choice." << endl;
         }
     }
 }

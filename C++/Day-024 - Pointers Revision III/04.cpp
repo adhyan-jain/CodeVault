@@ -29,19 +29,22 @@ corresponding binary values, resulting in the output: {-100, 200, -120, 345,
 -667}.
 */
 
-#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
 int main()
 {
     int n;
-    scanf("%d", &n);
+    cin >> n;
     int amounts[n], signs[n];
     for (int i = 0; i < n; i++)
     {
-        scanf("%d", &amounts[i]);
+        cin >> amounts[i];
     }
     for (int i = 0; i < n; i++)
     {
-        scanf("%d", &signs[i]);
+        cin >> signs[i];
     }
     int *p = amounts;
     int *s = signs;
@@ -54,7 +57,7 @@ int main()
     }
     for (int i = 0; i < n; i++)
     {
-        printf("%d ", *(p + i));
+        cout << *(p + i) << " ";
     }
     return 0;
 }

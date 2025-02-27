@@ -40,8 +40,10 @@ Output 2 :
 
 */
 
-#include <stdio.h>
-#include <string.h>
+#include <bits/stdc++.h>
+#include <cstring>
+
+using namespace std;
 
 int main()
 {
@@ -51,13 +53,13 @@ int main()
     int sum = 0;
     for (int i = 0; i < 3; i++)
     {
-        scanf("%s", s1);
-        scanf("%d", ptr);
+        cin >> s1;
+        cin >> *ptr;
         sum += *ptr;
     }
 
-    printf("%d\n", sum);
+    cout << sum << endl;
     double avg = (double)sum / 3;
-    printf("%.2lf", avg);
+    cout << fixed << setprecision(2) << avg;
     return 0;
 }
