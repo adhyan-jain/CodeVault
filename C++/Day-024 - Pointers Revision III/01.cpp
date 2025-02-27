@@ -2,7 +2,7 @@
 
 Problem Statement
 
-Nial is working on a health monitoring system and needs your assistance in creating a program using pointers to calculate the cardiac output based on heart rate and stroke volume. 
+Nial is working on a health monitoring system and needs your assistance in creating a program using pointers to calculate the cardiac output based on heart rate and stroke volume.
 
 Write a program that inputs heart rate (in beats per minute) and stroke volume (in milliliters per minute) and calculates the cardiac output using the formula: heart rate * stroke volume.
 
@@ -43,14 +43,14 @@ Output 3 :
 9.87 liters per minute
 */
 
-
 #include <stdio.h>
 
-int main(){
-    float a,b;
+int main()
+{
+    float a, b;
     scanf("%f %f", &a, &b);
-    float *ptr1=&a;
-    float *ptr2=&b;
-    printf("%.2f liters per minute", *ptr1*(*ptr2)/1000);
+    float *ptr1 = &a;
+    float *ptr2 = &b;
+    printf("%.2f liters per minute", *ptr1 * (*ptr2) / 1000);
     return 0;
 }

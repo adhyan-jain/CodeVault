@@ -1,7 +1,7 @@
 /*
 Problem Statement
 
-Write a program that allows Teju to input and manage population data for three cities. The program should allow users to input the names and populations of three cities. 
+Write a program that allows Teju to input and manage population data for three cities. The program should allow users to input the names and populations of three cities.
 
 Next, it calculates the total population of three cities and computes the average population using pointer arithmetic.
 
@@ -43,22 +43,21 @@ Output 2 :
 #include <stdio.h>
 #include <string.h>
 
-int main(){
+int main()
+{
     char s1[50];
     int arr[3];
-    int *ptr=arr;
-    int sum=0;
-    for(int i=0; i<3; i++){
+    int *ptr = arr;
+    int sum = 0;
+    for (int i = 0; i < 3; i++)
+    {
         scanf("%s", s1);
         scanf("%d", ptr);
-        sum+=*ptr;
+        sum += *ptr;
     }
-    
+
     printf("%d\n", sum);
-    double avg=(double)sum/3;
+    double avg = (double)sum / 3;
     printf("%.2lf", avg);
     return 0;
 }
-
-
-
