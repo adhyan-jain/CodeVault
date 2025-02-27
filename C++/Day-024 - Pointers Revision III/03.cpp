@@ -1,7 +1,7 @@
 /*
 Problem Statement
 
-Gokul wants to create a simple bank account management system. He wants to be able to deposit and withdraw money from his account and check his account balance. 
+Gokul wants to create a simple bank account management system. He wants to be able to deposit and withdraw money from his account and check his account balance.
 
 You need to help him implement this system using pointer arithmetic.
 
@@ -75,7 +75,7 @@ Input 5 :
 1 500
 2 100
 2 200
-3 
+3
 4
 Output 5 :
 Deposit successful.
@@ -87,38 +87,47 @@ Exiting program.
 */
 #include <stdio.h>
 
-int main(){
+int main()
+{
     int choice;
-    int amount=0;
-    int *ptr=&amount;
-    char ans='y';
-    while(ans=='y'){
+    int amount = 0;
+    int *ptr = &amount;
+    char ans = 'y';
+    while (ans == 'y')
+    {
         scanf("%d", &choice);
-        if(choice==1){
+        if (choice == 1)
+        {
             int add;
             scanf("%d", &add);
-            *ptr+=add;
+            *ptr += add;
             printf("Deposit successful.\n");
         }
-        else if(choice==2){
+        else if (choice == 2)
+        {
             int sub;
             scanf("%d", &sub);
-            if(sub>*ptr){
+            if (sub > *ptr)
+            {
                 printf("Insufficient balance.\n");
             }
-            else{
-                *ptr-=sub;
+            else
+            {
+                *ptr -= sub;
                 printf("Withdrawal successful.\n");
             }
         }
-        else if(choice==3){
+        else if (choice == 3)
+        {
             printf("Current Balance: %d\n", *ptr);
         }
-        else if(choice==4){
+        else if (choice == 4)
+        {
             printf("Exiting program.\n");
             break;
         }
-        else{
+        else
+        {
             printf("Invalid choice.\n");
         }
     }
