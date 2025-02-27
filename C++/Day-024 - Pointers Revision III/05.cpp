@@ -8,33 +8,40 @@ more challenging than he thought.
 Therefore, assist him in writing a program that calculates the sum of the
 diagonals in a 3D matrix
 */
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 int main()
 {
     int rows, columns, height;
-    scanf("%d %d %d", &rows, &columns, &height);
+    cin >> rows >> columns >> height;
     if (rows != columns || columns != height)
     {
-        printf("Error\n");
+        cout << "Error" << endl;
         return 0;
     }
-    int matrix[rows][columns][height];
+    
+    vector<vector<vector<int>>> matrix(rows, vector<vector<int>>(columns, vector<int>(height)));
+    
     for (int i = 0; i < rows; i++)
     {
         for (int j = 0; j < columns; j++)
         {
             for (int k = 0; k < height; k++)
             {
-                scanf("%d", &matrix[i][j][k]);
+                cin >> matrix[i][j][k];
             }
         }
     }
+    
     int sum = 0;
     for (int i = 0; i < rows; i++)
     {
-        sum += *(*(*(matrix + i) + i) + i);
+        sum += matrix[i][i][i];
     }
-    printf("%d\n", sum);
+    
+    cout << sum << endl;
     return 0;
 }
