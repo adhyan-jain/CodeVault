@@ -1,7 +1,7 @@
 /*
 Problem Statement
 
-Rani wants to purchase n different books from a bookstore.
+Rani wants to purchase n different books from a bookstore. 
 
 Create a structure called book with the following details: book ID, book's name, author, publisher, number of copies, and price.
 
@@ -47,40 +47,33 @@ ToKillAMockingbird 472.50
 PrideAndPrejudice 605.00
 
 */
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
-typedef struct
-{
+typedef struct{
     int id;
     char name[51];
     char author[26];
-    char publisher[26];
+    char publisher [26];
     int copies;
     float price;
-} book;
+}book;
 
-int main()
-{
+int main(){
     int n;
-    cin >> n;
+    scanf("%d", &n);
     book a[n];
-    for (int i = 0; i < n; i++)
-    {
-        cout << a[i].id << a[i].name << a[i].author << a[i].publisher << a[i].copies << a[i].price;
+    for(int i=0; i<n; i++){
+        scanf("%d %s %s %s %d %f", &a[i].id, a[i].name, a[i].author, a[i].publisher, &a[i].copies, &a[i].price);
     }
-
-    for (int i; i < n; i++)
-    {
-        if (a[i].price > 500)
-        {
-            a[i].price *= 1.1;
+    
+    for(int i; i<n; i++){
+        if(a[i].price>500){
+            a[i].price*=1.1;
         }
-        else
-        {
-            a[i].price *= 1.05;
+        else{
+            a[i].price*=1.05;
         }
-        cout << a[i].name << " " << a[i].price;
+        printf("%s %.2f\n", a[i].name, a[i].price);
     }
     return 0;
 }

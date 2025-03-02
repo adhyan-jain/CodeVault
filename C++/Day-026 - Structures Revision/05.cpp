@@ -79,27 +79,32 @@ Roll no: 4
 Name: Charlie
 Marks: 75.40*/
 
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-struct Student{
+struct Student
+{
     int roll_no;
     char name[100];
     float marks;
 };
 
-int main(){
+int main()
+{
     int n;
-    scanf("%d", &n);
+    cin >> n;
     struct Student a[n];
-    for(int i=0; i<n; i++){
-        scanf("%d %s %f", &a[i].roll_no, a[i].name, &a[i].marks);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i].roll_no >> a[i].name >> a[i].marks;
     }
-    printf("Details of all students\n");
-    for(int i=0; i<n; i++){
-        printf("Student %d\n",i+1);
-        printf("Roll no: %d\n",a[i].roll_no);
-        printf("Name: %s\n", a[i].name);
-        printf("Marks: %.2f\n", a[i].marks);
+    cout << "Details of all students" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Student " << i + 1 << endl;
+        cout << "Roll no: " << a[i].roll_no << endl;
+        cout << "Name: " << a[i].name << endl;
+        cout << "Marks: " << a[i].marks << endl;
     }
     return 0;
 }
