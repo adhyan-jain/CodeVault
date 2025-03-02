@@ -137,6 +137,7 @@ int main(){
     int choice;
     scanf("%d", &choice);
     int num;
+    int amount;
     switch(choice){
         case 1:
             scanf("%d", &num);
@@ -151,7 +152,6 @@ int main(){
             printf("Amount Deposited Successfully!");
             break;
         case 3:
-            int amount;
             scanf("%d", &num, &amount);
             for(int i=0; i<n; i++){
                 if(a[i].acc_no==num){
