@@ -44,15 +44,17 @@ Input 2 :
 Output 2 :
 113449.63 Joules*/
 
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-#define Kinetic_Energy(mass, velocity) (0.5*mass*velocity*velocity)
+#define Kinetic_Energy(mass, velocity) (0.5 * mass * velocity * velocity)
 
-int main(){
+int main()
+{
     double mass;
     double velocity;
-    scanf("%lf %lf",&mass, &velocity);
-    double KE=Kinetic_Energy(mass, velocity);
-    printf("%.2lf Joules", KE);
+    cin >> mass >> velocity;
+    double KE = Kinetic_Energy(mass, velocity);
+    cout << "Joules" << KE;
     return 0;
 }

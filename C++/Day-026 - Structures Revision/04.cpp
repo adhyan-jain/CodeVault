@@ -57,42 +57,52 @@ Customers: None
 Incremented balance: None
 */
 
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-typedef struct{
+typedef struct
+{
     char name[100];
     int acc;
     float balance;
-}customer;
+} customer;
 
-int main(){
+int main()
+{
     int n;
-    scanf("%d", &n);
+    cin >> n;
     customer a[n];
-    for(int i=0; i<n; i++){
-        scanf("%s %d %f", a[i].name, &a[i].acc, &a[i].balance);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i].name >> a[i].acc >> a[i].balance;
     }
-    printf("Customers: ");
-    int c=0;
-    for(int i=0; i<n; i++){
-        if(a[i].balance<200){
-            printf("%s\n", a[i].name);
+    cout << "Customers: ";
+    int c = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i].balance < 200)
+        {
+            cout << a[i].name << endl;
             c++;
         }
     }
-    if(!c){
-        printf("None\n");
+    if (!c)
+    {
+        cout << "None" << endl;
     }
-    c=0;
-    printf("Incremented balance: ");
-    for(int i=0; i<n; i++){
-        if(a[i].balance>=1000){
-            printf("%s Rs.%.2f\n", a[i].name, a[i].balance+100);
+    c = 0;
+    cout << "Incremented balance: ";
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i].balance >= 1000)
+        {
+            cout << "Rs." << a[i].name << " " << a[i].balance + 100 << endl;
             c++;
         }
     }
-    if(!c){
-        printf("None\n");
+    if (!c)
+    {
+        cout << "None" << endl;
     }
     return 0;
 }

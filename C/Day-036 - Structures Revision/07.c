@@ -100,8 +100,7 @@ Output 3 :
 */
 
 
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 typedef struct{
     int feet;
@@ -110,17 +109,17 @@ typedef struct{
 
 int main(){
     int n;
-    cin>>n;
+    scanf("%d", &n);
     struct1 a[n];
     float sumi=0;
     int sumf=0;
     for(int i=0; i<n; i++){
-        cin>>a[i].feet>>a[i].inch;
+        scanf("%d %f", &a[i].feet, &a[i].inch);
         sumi+=a[i].inch;
         sumf+=a[i].feet;
     }
     sumf=sumf+(int)sumi/12;
-    cout<<sumf<<endl;
-    cout<<sumi-(int)(sumi/12)*12<<endl;
+    printf("%d\n", sumf);
+    printf("%.2f", sumi-(int)(sumi/12)*12);
     return 0;
 }
