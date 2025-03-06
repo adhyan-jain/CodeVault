@@ -1,0 +1,63 @@
+1. cd "Directory path"   - to chnage Directory
+
+2. git init   - to initialize git in a Directory
+
+3. git status   - to view changes made after the last commit
+
+4. git add file_name       - adds file
+           folder_name     - adds folder
+           .               - adds everything
+
+5. git commit -m "Message"    - commit changes in file or creates another version of the work
+
+6. git config --global user.email "your_email"    - to add email to git
+
+7. git config --global user.name "your_name"    - to add name to git
+
+8. git log  - to log all commits
+
+9. git log --all   -to log all commits irrespective of the commit you are on
+
+10. git log --all --graph   - to log all commits with a graph like line that shows the commit history with branching
+
+11. git commit -m "Message"  --amend    - to amend the last commit made, it does not create a seperate commit but fixes the last one
+
+12. git checkout -- .    - reverts all local changes
+
+13. git checkout <commit_hash | branch> .                - adds all changes of another version to the current version
+                               file_name
+                               folder_name
+
+14. git checkout <commit_hash | branch>     - jump to another commit
+
+15. git config --global alias.new_alias "git command"
+
+Eg: git config --global alias.s "status"     - by this we can just type git s to use git status
+
+16. To ignore files create .gitignore file manually and type in the file name you want to hide
+
+17.  rm -rf .git     -removes git from a folder
+
+18. git remote add origin <github_repo_link>     - links github repo to a folder, here origin is a nickname to refer to the github repo
+
+19. git remote     - outputs the remote repo nickname we set during linking
+
+20. git remote -v    - -v stands for verbose which means more detail, it gives out the link of the remote repo
+
+21. git remote remove origin    - removes the connection between the remote repo and the local repo
+
+22. git config --global credential.username "github_username"     - to connect github account with git
+
+23.  git push origin master    - to push the changes from local to remote repo
+
+24. git push origin master --set-upstream    - it memorises the origin mster so we just have to type git push after that
+
+25. git push origin master -f     - in case you amend a commit and you want to push the changes to the remote repo, it forcefully push the commit
+
+26. git clone <git_repo_link> folder_name    - clone github repo in the cureent directory
+
+27. git fetch     - it syncs remote branch when updated from some other device
+
+28. git pull origin master    - pulls changes from remote repo/ github repo
+
+29. git pull origin master --set-upstream     - it memorises the origin mster so we just have to type git pull after that
