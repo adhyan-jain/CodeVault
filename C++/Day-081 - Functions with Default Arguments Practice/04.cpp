@@ -25,41 +25,49 @@ Function specification
 calculateCaloriesBurned - This will have an optional parameter intensity with a default value of 1.0.
 */
 
-
 #include <iostream>
+
 using namespace std;
 
-struct Exercise {
-    string exerciseType;
-    double duration; 
+class A{
+    string type;
+    double duration;
+    double weight;
+    double intensity;
+    public:
+    
+        A(string s, double a, double b, double c = 1) : type(s), duration(a), weight(b), intensity(c){}
+        
+        int calc(){
+            double cal=duration*weight*intensity;
+            if(type == "running"){
+                    cal *= 9.8;
+            }
+            else if(type == "cycling"){ 
+                    cal *= 6.7;
+            }
+            else if(type == "swimming"){
+                    cal *= 7.2;
+            }
+            else if (type == "other"){
+                    cal *= 5.0;
+            }
+            
+            return cal;
+        }
 };
-
-double calculateCaloriesBurned(const Exercise& exercise, double weight, double intensity = 1.0) {
-    double caloriesPerMinute;
-
-    if (exercise.exerciseType == "running") {
-        caloriesPerMinute = 9.8 * intensity; 
-    } else if (exercise.exerciseType == "cycling") {
-        caloriesPerMinute = 6.7 * intensity; 
-    } else if (exercise.exerciseType == "swimming") {
-        caloriesPerMinute = 7.2 * intensity;
-    } else {
-        caloriesPerMinute = 5.0 * intensity;
+int main(){
+    string s;
+    double a, b, c=1;
+    
+    cin >> s >> a >> b;
+    
+    if(cin.peek() != ' '){
+        cin>>c;
     }
-
-    return caloriesPerMinute * exercise.duration * weight;
-}
-
-int main() {
-    Exercise userExercise;
-    cin >> userExercise.exerciseType;
-    cin >> userExercise.duration;
-    double userWeight;
-    cin >> userWeight;
-    double userIntensity = 1.0;
-    cin >> userIntensity;
-    double burnedCalories = calculateCaloriesBurned(userExercise, userWeight, userIntensity);
-    cout << "You burned approximately " << burnedCalories << " calories." << endl;
-
+    
+    A aa(s, a, b, c);
+    
+    cout << "You burned approximately " << aa.calc() << " calories." << endl;
     return 0;
 }

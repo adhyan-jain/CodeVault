@@ -10,25 +10,26 @@ total distance travelled.
 
 #include <iostream>
 #include <iomanip>
+
 using namespace std;
 
-class Distance {
-public:
+class Distance{
     int speed;
-    int time;
-    friend double calcDistance(const Distance& d);
+    int times;
+    public:
+        Distance(int s, int t) : speed(s), times(t) {}
+        
+        double calcDistance(){
+            return speed*times;
+        }
 };
 
-double calcDistance(const Distance& d) {
-    return static_cast<double>(d.speed) * d.time;
-}
-
-int main() {
-    Distance d;
-    cin >> d.speed >> d.time;
-
-    double distance = calcDistance(d);
-    cout << fixed << setprecision(2) << distance << endl;
-
+int main(){
+    
+    int s, t;
+    cin >> s >> t;
+    
+    Distance d(s,t);
+    cout << fixed << setprecision(2) << d.calcDistance();
     return 0;
 }
