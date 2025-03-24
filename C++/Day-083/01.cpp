@@ -127,7 +127,7 @@ Sony 499.99 32
 Whirlpool 749.99 400
 1366 768
 600
-Output 2 :
+Output 2 :  
 Television Information:
 Device: Sony, Price: $499.99
 Screen Size: 32 inches (81.3 cm)
@@ -138,3 +138,77 @@ Device: Whirlpool, Price: $750.0
 Capacity: 400 liters (14.1 cubic feet)
 Energy Efficiency: 42.5 kWh per cubic foot
 */
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+class Device {
+protected:
+    string brand;
+    double price;
+public:
+    Device(string b, double p) : brand(b), price(p) {}
+    void display() {
+        cout << "Device: " << brand << ", Price: $" << fixed << setprecision(2) << price << endl;
+    }
+};
+
+class Television : public Device {
+    int screenSize;
+    int resolutionWidth, resolutionHeight;
+public:
+    Television(string b, double p, int s, int w, int h) : Device(b, p), screenSize(s), resolutionWidth(w), resolutionHeight(h) {}
+    
+    double calculatePixelDensity() {
+        double screenSizeCM = screenSize * 2.54;
+        return (resolutionWidth * resolutionHeight) / (screenSizeCM * screenSizeCM);
+    }
+    
+    void display() {
+        cout << "Television Information:" << endl;
+        Device::display();
+        double screenSizeCM = screenSize * 2.54;
+        cout << "Screen Size: " << screenSize << " inches (" << fixed << setprecision(1) << screenSizeCM << " cm)" << endl;
+        cout << "Pixel Density: " << fixed << setprecision(1) << calculatePixelDensity() << " pixels per square centimeter" << endl;
+    }
+};
+
+class Refrigerator : public Device {
+    int capacity;
+    double energyConsumption;
+public:
+    Refrigerator(string b, double p, int c, double e) : Device(b, p), capacity(c), energyConsumption(e) {}
+    
+    double calculateEnergyEfficiency() {
+        double capacityCubicFeet = capacity * 0.0353;
+        return energyConsumption / capacityCubicFeet;
+    }
+    
+    void display() {
+        cout << "\nRefrigerator Information:" << endl;
+        Device::display();
+        double capacityCubicFeet = capacity * 0.0353;
+        cout << "Capacity: " << capacity << " liters (" << fixed << setprecision(1) << capacityCubicFeet << " cubic feet)" << endl;
+        cout << "Energy Efficiency: " << fixed << setprecision(1) << calculateEnergyEfficiency() << " kWh per cubic foot" << endl;
+    }
+};
+
+int main() {
+    string tvBrand, fridgeBrand;
+    double tvPrice, fridgePrice, energyConsumption;
+    int screenSize, resolutionWidth, resolutionHeight, fridgeCapacity;
+    
+    cin >> tvBrand >> tvPrice >> screenSize;
+    cin >> fridgeBrand >> fridgePrice >> fridgeCapacity;
+    cin >> resolutionWidth >> resolutionHeight;
+    cin >> energyConsumption;
+    
+    Television tv(tvBrand, tvPrice, screenSize, resolutionWidth, resolutionHeight);
+    Refrigerator fridge(fridgeBrand, fridgePrice, fridgeCapacity, energyConsumption);
+    
+    tv.display();
+    fridge.display();
+    
+    return 0;
+}
