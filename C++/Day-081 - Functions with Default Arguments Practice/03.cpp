@@ -26,63 +26,60 @@ Include Meal Yes = 30.0, No = 0.0
 include Service Yes = 50.0, No = 0.0
 */
 
-
 #include <iostream>
 #include <iomanip>
+
 using namespace std;
 
-double calculateRoomCharges(int roomType = 1, int numNights = 1) {
-    double roomRate;
-
-    switch (roomType) {
-        case 1: // Standard Room
-            roomRate = 100.0;
-            break;
-        case 2: // Deluxe Room
-            roomRate = 150.0;
-            break;
-        case 3: // Suite
-            roomRate = 250.0;
-            break;
-        default:
-            cout << "No rooms\n";
-            break;
-    }
-
-    return roomRate * numNights;
-}
-
-double calculateMealExpenses(bool includeMeals = false) {
-    return includeMeals ? 30.0 : 0.0;
-}
-
-double calculateServiceCosts(bool includeServices = false) {
-    return includeServices ? 50.0 : 0.0;
-}
-
-double calculateTotalCost(int roomType, int numNights, bool includeMeals, bool includeServices) {
-    double roomCharges = calculateRoomCharges(roomType, numNights);
-    double mealExpenses = calculateMealExpenses(includeMeals);
-    double serviceCosts = calculateServiceCosts(includeServices);
-
-    return roomCharges + mealExpenses + serviceCosts;
-}
-
-int main() {
-    int roomType, numNights;
-    bool includeMeals, includeServices;
-
-    cin >> roomType;
-    cin >> numNights;
-    cin >> includeMeals;
-    cin >> includeServices;
-
-    double totalCost = calculateTotalCost(roomType, numNights, includeMeals, includeServices);
+class Hotel{
+    int type;
+    int nights;
+    bool meals;
+    bool services;
+    public:
+        Hotel(int a, int b, bool c, bool d) : type(a), nights(b), meals(c), services(d){
+        }
     
-    // Round off to two decimal points
-    cout << fixed << setprecision(2);
-    
-    cout << "Total cost of stay: Rs. " << totalCost << endl;
+        double calculateRoomCharges(){
+            double cost = 0;
+            switch(type){
+                case 1:
+                    cost += 100*nights;
+                    break;
+                case 2:
+                    cost += 150*nights;
+                    break;
+                case 3:
+                    cost += 250*nights;
+                    break;
+                default:
+                    cout << "No rooms" << endl;
+                    break;
+            }
+            return cost;
+        }
+        
+        double calculateMealExpenses(){
+            return (meals) ? 30 : 0;
+        }
+        
+        double calculateServiceCost(){
+            return (services) ? 50 : 0;
+        }
+};
 
+int main(){
+    int a,b;
+    bool c,d;
+    
+    cin >> a >> b >> c >> d;
+    Hotel h(a,b,c,d);
+    
+    double cost = 0;
+    
+    cost += h.calculateRoomCharges();
+    cost += h.calculateMealExpenses();
+    cost += h.calculateServiceCost();
+    cout << "Total cost of stay: Rs. " << fixed << setprecision(2) << cost;
     return 0;
 }
