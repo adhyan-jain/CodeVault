@@ -16,45 +16,40 @@ Area = length * width
 */
 
 #include <iostream>
+
 using namespace std;
 
-class Rectangle {
-    private:
-        static int count;
-        int length, width;
+class Rectangle{
+    int l;
+    int b;
+    static int count;
     public:
-        static int getCount() {
-            return count;
+        void get(int len, int wid){
+            l=len;
+            b=wid;
         }
-        void setDimensions(int l, int w) {
-            length = l;
-            width = w;
+        static int getCount(){
+            return ++count;
         }
-        int getArea() {
-            return length * width;
-        }
-        Rectangle() {
-            count++;
+        int getArea(){
+            return l*b;
         }
 };
 
-int Rectangle::count = 0;
+int Rectangle :: count=0;
 
-int main() {
-    int n;
-    
-    cin >> n;
-    Rectangle *rect = new Rectangle[n];
-    for (int i = 0; i < n; i++) {
-        int l, w;
-        
-        cin >> l >> w;
-        rect[i].setDimensions(l, w);
+int main(){
+    int num;
+    cin>>num;
+    Rectangle r[num];
+    cout << "Total number of rectangles: "<<num<<endl;
+    for(int i=0; i<num; i++){
+        int l,b;
+        cin>>l>>b;
+        r[i].get(l,b);
+        int c=r[i].getCount();
+        int area=r[i].getArea();
+        cout<<"Area of rectangle "<<c<<": "<<area<<endl;
     }
-    cout << "Total number of rectangles: " << Rectangle::getCount() << endl;
-    for (int i = 0; i < n; i++) {
-        cout << "Area of rectangle " << i+1 << ": " << rect[i].getArea() << endl;
-    }
-    delete[] rect;
     return 0;
 }

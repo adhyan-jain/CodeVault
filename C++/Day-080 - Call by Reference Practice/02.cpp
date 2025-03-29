@@ -12,16 +12,12 @@ Function Name: void currentSalary(int **rate ,int **salary)
 
 using namespace std;
 
-void currentSalary(int *rate, int *salary) {
-  float hike = (float)*rate / 100.0;
-  float newSalary = (*salary) * hike + (*salary);
-  cout << fixed << setprecision(2) << newSalary << endl;
+void currentSalary(int *rate, int *s){
+    cout<< fixed << setprecision(2) << *s*(1+0.01*(*rate));
 }
 
-int main() {
-  int rating, salary;
-  cin >> rating >> salary;
-
-  currentSalary(&rating, &salary);
-  return 0;
+int main(){
+    int r, s;
+    cin>>r>>s;
+    currentSalary(&r, &s);
 }

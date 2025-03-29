@@ -17,49 +17,47 @@ Note: This is a sample question asked in a TCS interview.
 */
 
 #include <iostream>
+
 using namespace std;
+
 class Operation{
-    int a,b;
-public:
-    void get();
-    void sum();
-    void difference();
-    void product();
-    void division();
-    void modulus();
+    int num1, num2;
+    public:
+        inline void get();
+        inline void sum();
+        inline void difference();
+        inline void product();
+        inline void division();
+        inline void modulus();
 };
 
-inline void Operation :: get(){
-    cin >> a;
-    cin >> b;
+void Operation :: get(){
+    cin>>num1;
+    cin>>num2;
 }
-
-inline void Operation :: sum(){
-    cout << "Addition of two numbers: " << a+b << "\n";
+void Operation :: sum(){
+    cout<<"Addition of two numbers: "<<num1+num2<<endl;
 }
-
-inline void Operation :: difference(){
-    cout << "Difference of two numbers: " << a-b << "\n";
+void Operation :: difference(){
+    cout<<"Difference of two numbers: "<<num1-num2<<endl;
 }
-
-inline void Operation :: product(){
-    cout << "Product of two numbers: " << a*b << "\n";
+void Operation :: product(){
+    cout<<"Product of two numbers: "<<num1*num2<<endl;
 }
-
-inline void Operation ::division(){
-    cout<<"Division of two numbers: "<<a/b<<"\n" ;
+void Operation :: division(){
+    cout<<"Division of two numbers: "<<num1/num2<<endl;
 }
-inline void Operation ::modulus(){
-    cout<<"Modulus of two numbers: "<<a%b ;
+void Operation :: modulus(){
+    cout<<"Modulus of two numbers: "<<num1%num2<<endl;
 }
 
 int main(){
-    Operation s;
-    s.get();
-    s.sum();
-    s.difference();
-    s.product();
-    s.division();
-    s.modulus();
+    Operation o;
+    o.get();
+    o.sum();
+    o.difference();
+    o.product();
+    o.division();
+    o.modulus();
     return 0;
 }

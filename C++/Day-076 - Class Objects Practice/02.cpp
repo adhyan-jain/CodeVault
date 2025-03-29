@@ -9,29 +9,33 @@ Write a program that has a class called Operation that takes two integers: a and
 */
 
 #include <iostream>
+
 using namespace std;
 
-class Operation {
+class Operations
+{
 public:
   int a, b;
 };
 
-int main() {
-  Operation op;
-  
+int main()
+{
+  Operations op;
+
   cin >> op.a >> op.b;
   
-  cout << "Addition: " << (op.a + op.b) << endl;
-  cout << "Difference: " << (op.a - op.b) << endl;
-  cout << "Product: " << (op.a * op.b) << endl;
-  
-  if (op.b == 0) {
+  cout << "Addition: " << op.a + op.b << endl;
+  cout << "Difference: " << op.a - op.b << endl;
+  cout << "Product: " << op.a * op.b << endl;
+
+  if (op.b != 0)
+  {
+    cout << "Division: " << op.a / op.b << endl;
+    cout << "Modulus: " << op.a % op.b << endl;
+  }
+  else
+  {
     cout << "Division by zero not possible" << endl;
-  } 
-  
-  else {
-    cout << "Division: " << (op.a / op.b) << endl;
-    cout << "Modulus: " << (op.a % op.b) << endl;
   }
 
   return 0;

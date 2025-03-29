@@ -16,27 +16,26 @@ Formula: TSA = 2 * [(Width * Height) + (Width * Height) + (Height * Length) + (H
 #include <iomanip>
 using namespace std;
 
-class House {
-public:
+class House{
     double length;
     double width;
     double height;
+    public:
+        House(double l, double b, double h){
+            length=l;
+            width=b;
+            height=h;
+        }
+        void TSA(){
+            double tsa=2*((width*height)+(width*height)+(height*length)+(height*length));
+            cout<<fixed<<setprecision(2)<<tsa<<" square units.";
+        }
 };
 
-int main() {
-    House myHouse;
-    cin >> myHouse.length;
-    cin >> myHouse.width;
-    cin >> myHouse.height;
-    
-    double side1Area = myHouse.height * myHouse.width;
-    double side2Area = myHouse.height * myHouse.width;
-    double side3Area = myHouse.length * myHouse.height;
-    double side4Area = myHouse.length * myHouse.height;
-
-    double totalSurfaceArea = 2 * (side1Area + side2Area + side3Area + side4Area);
-
-    cout << fixed << setprecision(2) << totalSurfaceArea << " square units.";
-
+int main(){
+    double l,b,h;
+    cin>>l>>b>>h;
+    House H(l,b,h);
+    H.TSA();
     return 0;
 }
