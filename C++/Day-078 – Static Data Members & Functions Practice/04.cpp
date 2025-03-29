@@ -22,60 +22,49 @@ Circumference = 2 * 3.14159 * radius
 
 #include <iostream>
 #include <iomanip>
+
 using namespace std;
 
-class Circle {
-private:
-    static int circleCount;
-    double radius;
+#define PI 3.14159
 
-public:
-    Circle() {
-        circleCount++;
-    }
-
-    static int getCircleCount() {
-        return circleCount;
-    }
-
-    void setRadius(double r) {
-        radius = r;
-    }
-
-    double calculateArea() {
-        return 3.14159 * radius * radius;
-    }
-
-    double calculateCircumference() {
-        return 2 * 3.14159 * radius;
-    }
-
-    void displayDetails() {
-        cout << "Radius: " << fixed << setprecision(2) << radius << endl;
-        cout << "Area: " << fixed << setprecision(2) << calculateArea() << endl;
-        cout << "Circumference: " << fixed << setprecision(2) << calculateCircumference() << endl;
-    }
+class Circle{
+    double r;
+    static int count;
+    public:
+        void get(double radius){
+            r=radius;
+        }
+        static void circleCount(){
+            count++;
+        }
+        static void getCircleCount(){
+            cout<<count<<endl;
+        }
+        void calculateArea(){
+            cout<<"Area: "<< fixed << setprecision(2) << PI*r*r << endl;
+        }
+        void calculateCircumference(){
+            cout<<"Circumference: "<< fixed << setprecision(2) << PI*r*2 << endl;
+        }
+        void displayDetails(Circle c){
+            cout<<"Radius: "<< fixed << setprecision(2) << r << endl;
+            c.calculateArea();
+            c.calculateCircumference();
+        }
 };
 
-int Circle::circleCount = 0;
+int Circle :: count=0;
 
-int main() {
-    int n;
-    cin >> n;
-
-    Circle circles[n];
-
-    for (int i = 0; i < n; i++) {
+int main(){
+    int num;
+    cin>>num;
+    Circle c[num];
+    cout << num << endl;
+    for(int i=0; i<num; i++){
         double radius;
-        cin >> radius;
-        circles[i].setRadius(radius);
+        cin>>radius;
+        c[i].get(radius);
+        c[i].displayDetails(c[i]);
     }
-
-    cout << Circle::getCircleCount() << endl;
-
-    for (int i = 0; i < n; i++) {
-        circles[i].displayDetails();
-    }
-
     return 0;
 }

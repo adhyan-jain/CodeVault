@@ -16,46 +16,49 @@ Note: This is a sample question that can be asked in a TCS recruitment.
 #include <iostream>
 #include <cmath>
 
-inline bool isArmstrong(int number) {
-    int originalNumber = number;
-    int sum = 0;
-    int digits = 0;
+using namespace std;
 
-    while (originalNumber != 0) {
-        originalNumber /= 10;
-        digits++;
+class A{
+    public:
+        inline bool isArmstrong(int number);
+        inline void printFactors(int number);
+};
+
+inline bool A :: isArmstrong(int num){
+    int c=0;
+    int num2=num;
+    int num3=num2;
+    int len=0;
+    while(num3){
+        len++;
+        num3/=10;
     }
-
-    originalNumber = number;
-    while (originalNumber != 0) {
-        int digit = originalNumber % 10;
-        sum += pow(digit, digits);
-        originalNumber /= 10;
+    while(num){
+        int rem = num%10;
+        c+=pow(rem, len);
+        num/=10;
     }
-
-    return (sum == number);
+    return (num2==c) ? 1:0;
 }
-
-inline void printFactors(int number) {
-    std::cout << std::endl;
-    for (int i = 1; i <= number; i++) {
-        if (number % i == 0) {
-            std::cout << i << " ";
+inline void A :: printFactors(int num){
+    for (int i=1; i<=num; i++){
+        if(num%i==0){
+            cout<<i<<" ";
         }
     }
-    std::cout << std::endl;
 }
 
-int main() {
-    int number;
-    std::cin >> number;
 
-    if (isArmstrong(number)) {
-        std::cout << number << " is an Armstrong number.";
-        printFactors(number);
-    } else {
-        std::cout << number << " is not an Armstrong number.";
-     
+int main(){
+    int num;
+    cin>>num;
+    A a;
+    if(a.isArmstrong(num)){
+        cout<<num<<" is an Armstrong number."<<endl;
+        a.printFactors(num);
+    }
+    else{
+        cout<<num<<" is not an Armstrong number."<<endl;
     }
     return 0;
 }

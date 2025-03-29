@@ -20,69 +20,73 @@ void occur (const char * str1) - To count all occurrences of a character
 */
 
 #include <iostream>
+#include <cstring>
+
 using namespace std;
 
-int length(const char* str1) {
-    int i;
-    for (i = 0; str1[i] != '\0'; i++) {
-    }
-    return i;
+int length(char* str){
+    
+    return strlen(str);
 }
 
-void count(const char* str1) {
-    int digi = 0, alpha = 0, spch = 0, i;
-    int len = length(str1);
-    for (i = 0; i < len; i++) {
-        switch (str1[i]) {
-            case 97 ... 122:  // Lowercase alphabets
-            case 65 ... 90:   // Uppercase alphabets
+void count(char *str){
+    
+    int alpha=0, num=0, spc=0;
+    int len = strlen(str);
+    for(int i=0; i<len; i++){
+        
+        switch(str[i]){
+            case 97 ... 122:
+            case 65 ... 90:
                 alpha++;
                 break;
-            case 43 ... 52:   // Digits
-                digi++;
+            case 43 ... 52:
+                num++;
                 break;
             default:
-                spch++;
+                spc++;
                 break;
         }
     }
-    cout << "Alphabets: " << alpha << endl;
-    cout << "Numbers: " << digi << endl;
-    cout << "Special characters: " << spch << endl;
+    
+    cout << "Alphabets: "<< alpha<< endl;
+    cout << "Numbers: " << num << endl;
+    cout << "Special characters: " << spc << endl;
 }
 
-void occur(const char* str1) {
-    int i, j, k = 1, count = 0;
-    int len = length(str1);
-    char a[len];
-    a[0] = str1[0];
-    for (i = 0; i < len; i++) {
-        for (j = 0; j < k; j++) {
-            if (str1[i] == a[j]) {
+void occur(char* str){
+    int len = strlen(str);
+    int k=1;
+    int a[len];
+    a[0]=str[0];
+    for(int i=0; i<len; i++){
+        for(int j=0; j<k; j++){
+            if(a[j] == str[i]){
                 break;
             }
-            if (j == k - 1) {
-                a[k] = str1[i];
+            if(j == k-1){
+                a[k]=str[i];
                 k++;
             }
         }
     }
-    for (i = 0; i < k; i++) {
-        for (j = 0; j < len; j++) {
-            if (a[i] == str1[j]) {
+    
+    for(int i=0; i<k; i++){
+        int count =0;
+        for(int j=0; j<len; j++){
+            if(a[i]==str[j]){
                 count++;
             }
         }
-        cout << "Occurrence of " << a[i] << " is " << count << endl;
-        count = 0;
+        cout<<"Occurrence of "<<char(a[i])<<" is "<<count<<endl;
     }
 }
 
-int main() {
-    int n;
+int main(){
     char str[50];
-    cin >> str;
-    cout << "Length: " << length(str) << endl;
+    cin>>str;
+    
+    cout<<"Length: "<<length(str)<<endl;
     count(str);
     occur(str);
     return 0;

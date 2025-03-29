@@ -7,33 +7,34 @@ Create a class Demo and include a constructor to initialize the value and write 
 square, square root, cube, and cube root of the given number after that the destructor destroys the object.
 */
 
-#include <bits/stdc++.h>
+#include <iostream>
 #include <cmath>
+
 using namespace std;
 
-class Demo {
-   private:
-   int n;
-   public:
-   Demo(int num) {
-      cout << "Inside Constructor" << endl;
-      this->n = num;
-   }
-   void display() {
-      cout << "square = " << this->n * this->n << endl;
-      cout << "square root = " << sqrt(this->n) << endl;
-      cout << "cube = " << this->n * this->n * this->n << endl;
-      cout << "cube root = " << cbrt(this->n) << endl;
-   }
-   ~Demo() {
-      cout << "Inside Destructor";
-   }
+class Demo{
+    int n;
+    public:
+        Demo(int num){
+            n=num;
+            cout<<"Inside Constructor"<<endl;
+        }
+        void display(){
+            cout<<"square = "<<n*n<<endl;
+            cout<<"square root = "<<sqrt(n)<<endl;
+            cout<<"cube = "<<n*n*n<<endl;
+            cout<<"cube root = "<<cbrt(n)<<endl;
+        }
+        ~Demo(){
+            cout<<"Inside Destructor"<<endl;
+        }
 };
 
-int main() {
-   int n;
-   cin >> n;
-   Demo obj1(n);
-   obj1.display();
-   return 0;
+int main(){
+    int num;
+    cin>>num;
+    Demo d(num);
+    
+    d.display();
+    return 0;
 }

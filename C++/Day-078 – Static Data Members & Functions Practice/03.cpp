@@ -12,39 +12,26 @@ with the result printed to two decimal places.
 */
 
 #include <iostream>
-#include <iomanip> 
+#include <iomanip>
 using namespace std;
 
-class BankAccount {
-private:
-    static float interestRate;
-
-public:
-    static void setInterestRate(float rate) {
-        interestRate = rate;
-    }
-
-    float calculateInterest(float balance) {
-        return balance * interestRate;
-    }
+class BankAccount{
+    static float rate;
+    public:
+        float setInterestRate(float num, float amount){
+            rate=num;
+            return amount * rate;
+        }
 };
 
-float BankAccount::interestRate = 0.03;
+float BankAccount :: rate = 0.03;
 
-int main() {
-    float newRate, balance;
-
-    cin >> newRate;
-
-    BankAccount::setInterestRate(newRate);
-
-    cin >> balance;
-
-    BankAccount account;
-    float interest = account.calculateInterest(balance);
-
-    cout << fixed << setprecision(2); 
-    cout << interest;
-
+int main(){
+    float num;
+    cin>>num;
+    float amount;
+    cin>>amount;
+    BankAccount b;
+    cout << fixed << setprecision(2) << b.setInterestRate(num, amount);
     return 0;
 }

@@ -18,41 +18,37 @@ Height is the absolute difference between the y-coordinates of the upper-right a
 */
 
 #include <iostream>
-#include <iomanip> 
+#include <cmath>
 
 using namespace std;
 
-class Rectangle {
-private:
-  int x1, y1; 
-  int x2, y2; 
-
-public:
-  Rectangle(int initX1, int initY1, int initX2, int initY2) {
-        x1 = initX1;
-        y1 = initY1;
-        x2 = initX2;
-        y2 = initY2;
-        cout << "Rectangle created." << endl;
-  }
-
-  int area() { 
-    int width = abs(x2 - x1);
-    int height = abs(y2 - y1);
-    return width * height;
-  }
-
-  ~Rectangle() {
-    cout << "Rectangle destroyed." << endl;
-  }
+class Rectangle{
+    int llx, lly;
+    int urx, ury;
+    public:
+        Rectangle(){
+            cout<<"Rectangle created."<<endl;
+        }
+        void get(int a, int b, int c, int d){
+            llx=a;
+            lly=b;
+            urx=c;
+            ury=d;
+        }
+        void area(){
+            int area=abs(urx-llx)*abs(ury-lly);
+            cout<<"Area of the rectangle: "<<area<<endl;
+        }
+        ~Rectangle(){
+            cout<<"Rectangle destroyed.";
+        }
 };
 
-int main() {
-  int llx, lly, urx, ury;
-  cin >> llx >> lly;
-  cin >> urx >> ury;
-
-  Rectangle rect(llx, lly, urx, ury);
-  cout << "Area of the rectangle: " << rect.area() << endl;
-  return 0;
+int main(){
+    Rectangle r;
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    r.get(a,b,c,d);
+    r.area();
+    return 0;
 }

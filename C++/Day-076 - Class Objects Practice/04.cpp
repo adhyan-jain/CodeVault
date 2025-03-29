@@ -14,60 +14,57 @@ If current weather conditions differ from historical conditions, output: "Condit
 */
 
 #include <iostream>
-#include <string>
+#include <cstring>
+#include <iomanip>
 
 using namespace std;
 
-class Weather {
-private:
+class Weather{
     float temp;
-    string conditions;
-
-public:
-    Weather(float t, string c){
-        temp = t;
-        conditions = c;
-    }
-
-    void predict(Weather hist) {
-        if (temp > hist.temp) {
-            cout << "Warmer" << endl;
-        } 
-        else if (temp < hist.temp) {
-            cout << "Colder" << endl;
-        } 
-        else {
-            cout << "Same temperature" << endl;
+    string cond;
+    public:
+        Weather(float n, string s){
+            temp=n;
+            cond=s;
+        }
+        void func(float temps, string s2){
+            if(temp>temps){
+                cout<<"Colder"<<endl;
+            }
+            else if(temp<temps){
+                cout<<"Warmer"<<endl;
+            }
+            else{
+                cout<<"Same temperature"<<endl;
+            }
         }
         
-        if (conditions == hist.conditions) {
-            cout << "Same conditions: " << conditions << endl;
-        } 
-        else {
-            cout << "Conditions changing to: " << conditions << endl;
+        void func2(float temps, string s2){
+            if(cond==s2){
+                cout<<"Same conditions: "; 
+            }else{
+                cout<<"Conditions changing to: ";
+            }
+            cout<<s2;
         }
-
-    }
 };
 
-int main() {
-    float histTemp;
-    string histCond;
-
-    cin >> histTemp;
+int main(){
+    float temp;
+    string s1;
+    cin>>temp;
     cin.ignore();
-    getline(cin, histCond);
-
-    Weather histData(histTemp, histCond);
-
-    float currTemp;
-    string currCond;
-    cin >> currTemp;
+    getline(cin, s1);
+    
+    Weather e1(temp, s1);
+    
+    float temp2;
+    string s2;
+    cin>>temp2;
     cin.ignore();
-    getline(cin, currCond);
-
-    Weather currData(currTemp, currCond);
-    currData.predict(histData);
-
+    getline(cin, s2);
+   
+    e1.func(temp2, s2);
+    e1.func2(temp2, s2);
     return 0;
 }
